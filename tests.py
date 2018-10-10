@@ -2,6 +2,7 @@ import unittest
 
 from prob01 import prob01
 from prob02 import prob02
+from prob29 import encode, decode
 
 
 class TestDailyProblems(unittest.TestCase):
@@ -17,6 +18,10 @@ class TestDailyProblems(unittest.TestCase):
 
         lst = [3, 2, 1]
         self.assertEqual(prob02(lst), [2, 3, 6])
+
+    def test_prob29(self):
+        self.assertEqual(encode("AAAABBBCCDAA"), "4A3B2C1D2A")
+        self.assertEqual(decode("4A3B2C1D2A"), "AAAABBBCCDAA")
 
 
 if __name__ == '__main__':
