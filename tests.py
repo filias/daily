@@ -2,6 +2,7 @@ import unittest
 
 from prob01 import prob01
 from prob02 import prob02
+from prob03 import serialize, deserialize, Node
 from prob29 import encode, decode
 
 
@@ -18,6 +19,11 @@ class TestDailyProblems(unittest.TestCase):
 
         lst = [3, 2, 1]
         self.assertEqual(prob02(lst), [2, 3, 6])
+
+    def test_prob03(self):
+        node = Node('root', Node('left', Node('left.left')), Node('right'))
+        print(serialize(node))
+        self.assertEqual(deserialize(serialize(node)).left.left.val, 'left.left')
 
     def test_prob29(self):
         self.assertEqual(encode("AAAABBBCCDAA"), "4A3B2C1D2A")
