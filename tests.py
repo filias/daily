@@ -5,6 +5,7 @@ from prob02 import prob02
 from prob03 import serialize, deserialize, Node
 from prob04 import prob04
 from prob29 import encode, decode
+from prob40 import prob40
 
 
 class TestDailyProblems(unittest.TestCase):
@@ -35,6 +36,10 @@ class TestDailyProblems(unittest.TestCase):
     def test_prob29(self):
         self.assertEqual(encode("AAAABBBCCDAA"), "4A3B2C1D2A")
         self.assertEqual(decode("4A3B2C1D2A"), "AAAABBBCCDAA")
+
+    def test_prob40(self):
+        self.assertEqual(prob40([6, 1, 3, 3, 3, 6, 6]), 1)
+        self.assertEqual(prob40([13, 19, 13, 13]), 19)
 
 
 if __name__ == '__main__':
