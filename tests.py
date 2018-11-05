@@ -4,6 +4,7 @@ from prob01 import prob01
 from prob02 import prob02
 from prob03 import serialize, deserialize, Node
 from prob04 import prob04
+from prob05 import cons, car, cdr
 from prob29 import encode, decode
 from prob40 import prob40
 
@@ -24,7 +25,6 @@ class TestDailyProblems(unittest.TestCase):
 
     def test_prob03(self):
         node = Node('root', Node('left', Node('left.left')), Node('right'))
-        print(serialize(node))
         self.assertEqual(deserialize(serialize(node)).left.left.val, 'left.left')
 
     def test_prob04(self):
@@ -32,6 +32,10 @@ class TestDailyProblems(unittest.TestCase):
         self.assertEqual(prob04(lst), 2)
         lst = [1, 2, 0]
         self.assertEqual(prob04(lst), 3)
+
+    def test_prob05(self):
+        self.assertEqual(car(cons(3, 4)), 3)
+        self.assertEqual(cdr(cons(3, 4)), 4)
 
     def test_prob29(self):
         self.assertEqual(encode("AAAABBBCCDAA"), "4A3B2C1D2A")
