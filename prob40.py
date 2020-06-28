@@ -14,13 +14,12 @@ def prob40(lst):
     for val in lst:
         result[val] += 1
         if result[val] == 3:
-            del(result[val])
+            del result[val]
 
     result = dict(result)
     return list(result.keys())[0]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert prob40([6, 1, 3, 3, 3, 6, 6]) == 1
     assert prob40([13, 19, 13, 13]) == 19
-

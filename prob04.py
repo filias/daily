@@ -21,7 +21,7 @@ def prob04(lst):
         return 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     lst = [3, 4, -1, 1]
     assert prob04(lst) == 2
     lst = [1, 2, 0]

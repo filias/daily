@@ -10,7 +10,6 @@ from prob40 import prob40
 
 
 class TestDailyProblems(unittest.TestCase):
-
     def test_prob01(self):
         lst = [10, 15, 3, 7]
         k = 17
@@ -24,8 +23,8 @@ class TestDailyProblems(unittest.TestCase):
         self.assertEqual(prob02(lst), [2, 3, 6])
 
     def test_prob03(self):
-        node = Node('root', Node('left', Node('left.left')), Node('right'))
-        self.assertEqual(deserialize(serialize(node)).left.left.val, 'left.left')
+        node = Node("root", Node("left", Node("left.left")), Node("right"))
+        self.assertEqual(deserialize(serialize(node)).left.left.val, "left.left")
 
     def test_prob04(self):
         lst = [3, 4, -1, 1]
@@ -46,5 +45,5 @@ class TestDailyProblems(unittest.TestCase):
         self.assertEqual(prob40([13, 19, 13, 13]), 19)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

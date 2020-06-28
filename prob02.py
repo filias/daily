@@ -16,13 +16,13 @@ def prob02(lst):
     for idx, val in enumerate(lst):
         new_list = lst[:]
         new_list.remove(val)
-        output.append(reduce(lambda x, y: x*y, new_list))
+        output.append(reduce(lambda x, y: x * y, new_list))
 
     print(output)
     return output
 
 
-if __name__ == '__main__':
-    #lst = [1, 2, 3, 4, 5]
+if __name__ == "__main__":
+    # lst = [1, 2, 3, 4, 5]
     lst = [3, 2, 1]
     prob02(lst)

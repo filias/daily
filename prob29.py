@@ -10,27 +10,27 @@ and consists solely of alphabetic characters. You can assume the string to be de
 
 def encode(str):
     char_count = 0
-    current_char = ''
-    result = ''
+    current_char = ""
+    result = ""
     for char in str:
-        if current_char == '':
+        if current_char == "":
             current_char = char
             char_count += 1
         elif char == current_char:
             char_count += 1
         else:
-            result += '{}{}'.format(char_count, current_char)
+            result += "{}{}".format(char_count, current_char)
             current_char = char
             char_count = 1
 
     # Put the last char
-    result += '{}{}'.format(char_count, current_char)
+    result += "{}{}".format(char_count, current_char)
 
     return result
 
 
 def decode(str):
-    result = ''
+    result = ""
     char_count = 0
     for char in str:
         if char.isdigit():
@@ -41,6 +41,6 @@ def decode(str):
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert encode("AAAABBBCCDAA") == "4A3B2C1D2A"
     assert decode("4A3B2C1D2A") == "AAAABBBCCDAA"

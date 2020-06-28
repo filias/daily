@@ -15,21 +15,24 @@ Implement car and cdr.
 def cons(a, b):
     def pair(f):
         return f(a, b)
+
     return pair
 
 
 def car(pair):
     def f(a, b):
         return a
+
     return pair(f)
 
 
 def cdr(pair):
     def f(a, b):
         return b
+
     return pair(f)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     assert car(cons(3, 4)) == 3
     assert cdr(cons(3, 4)) == 4

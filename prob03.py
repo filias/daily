@@ -17,7 +17,7 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 
 class Node:
-    val = ''
+    val = ""
     left = None
     right = None
 
@@ -29,21 +29,21 @@ class Node:
 
 def serialize(node):
     if node.left is None and node.right is None:
-        return '{}'.format(node.val)
+        return "{}".format(node.val)
 
     if node.left is not None and node.right is not None:
-        return '{}({},{})'.format(node.val, serialize(node.left), serialize(node.right))
+        return "{}({},{})".format(node.val, serialize(node.left), serialize(node.right))
     if node.left is not None and node.right is None:
-        return '{}({},)'.format(node.val, serialize(node.left))
+        return "{}({},)".format(node.val, serialize(node.left))
     if node.left is None and node.right is not None:
-        return '{}(,{})'.format(node.val, serialize(node.right))
+        return "{}(,{})".format(node.val, serialize(node.right))
 
 
 def deserialize(str):
     try:
-        new_str = str.split('(', 1)
+        new_str = str.split("(", 1)
         val = new_str[0]
-        new_str = new_str[1][:-1].rsplit(',', 1)
+        new_str = new_str[1][:-1].rsplit(",", 1)
         left = new_str[0]
         right = new_str[1]
         print(val, left, right)
@@ -52,7 +52,7 @@ def deserialize(str):
         return Node(val)
 
 
-if __name__ == '__main__':
-    node = Node('root', Node('left', Node('left.left')), Node('right'))
-    assert deserialize(serialize(node)).left.left.val == 'left.left'
-    #return 'root(left(left.left,None),right)'
+if __name__ == "__main__":
+    node = Node("root", Node("left", Node("left.left")), Node("right"))
+    assert deserialize(serialize(node)).left.left.val == "left.left"
+    # return 'root(left(left.left,None),right)'
