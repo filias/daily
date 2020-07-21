@@ -162,13 +162,11 @@ Given a list of paper citations of a researcher, calculate their h-index.
 
 def h_index(lst: List) -> int:
     h, count = 0, 0
-    lst = sorted(lst)
-    for item in reversed(lst):
+    for count, item in enumerate(reversed(sorted(lst))):
         if count == h and count != 0:
             return h
         else:
             h = item
-            count += 1
     return h
 
 
