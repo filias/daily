@@ -42,6 +42,10 @@ def collect_coins(matrix):
     rows = len(matrix)
     columns = len(matrix[0])
 
+    # Empty matrix
+    if matrix == paths:
+        return 0
+
     # Position (row, column)
     collect_coins_aux((0, 0), paths[0])
 
@@ -50,3 +54,5 @@ def collect_coins(matrix):
 
 matrix = [[0, 3, 1, 1], [2, 0, 0, 4], [1, 5, 3, 1]]
 assert collect_coins(matrix) == 12
+matrix = [[]]
+assert collect_coins(matrix) == 0

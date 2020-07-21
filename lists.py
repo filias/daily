@@ -120,3 +120,28 @@ def prob40(lst):
 
 assert prob40([6, 1, 3, 3, 3, 6, 6]) == 1
 assert prob40([13, 19, 13, 13]) == 19
+
+
+"""
+Index i is the balance index when the condition is fulfilled
+sumleft(arr, i) = sumright(arr, i)
+"""
+
+
+def _sum_left(lst, index):
+    return sum(lst[:index])
+
+
+def _sum_right(lst, index):
+    # Includes the index
+    return sum(lst[index:])
+
+
+def balance_index(lst):
+    for index, element in enumerate(lst):
+        if _sum_left(lst, index) == _sum_right(lst, index):
+            return index
+
+
+assert balance_index([1, 2, 3, 6]) == 3
+assert balance_index([5, 2, 3, 1, 1, 1, 1]) == 2
