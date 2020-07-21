@@ -169,6 +169,7 @@ def h_index(lst: List) -> int:
         else:
             h = item
             count += 1
+    return h
 
 
 citations = [4, 3, 0, 1, 5]
@@ -179,3 +180,6 @@ assert h_index(citations) == 4
 
 citations = [1, 0]
 assert h_index(citations) == 1
+
+citations = []
+assert h_index(citations) == 0
