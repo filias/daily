@@ -49,7 +49,7 @@ def collect_coins(matrix):
     # Position (row, column)
     collect_coins_aux((0, 0), paths[0])
 
-    return max([sum(path) for path in paths])
+    return max(sum(path) for path in paths)
 
 
 matrix = [[0, 3, 1, 1], [2, 0, 0, 4], [1, 5, 3, 1]]
